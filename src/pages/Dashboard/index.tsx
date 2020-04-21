@@ -38,7 +38,7 @@ const Dashboard: React.FC = () => {
     async function loadTransactions(): Promise<void> {
       const response = await api.get('transactions');
       const responseTransactions: Transaction[] = response.data.transactions;
-      const formattedTransactions = responseTransactions.map((transaction) => {
+      const formattedTransactions = responseTransactions.map(transaction => {
         transaction.formattedValue =
           transaction.type === 'outcome'
             ? `- ${formatValue(transaction.value)}`
@@ -99,7 +99,7 @@ const Dashboard: React.FC = () => {
             </thead>
 
             <tbody>
-              {transactions.map((transaction) => (
+              {transactions.map(transaction => (
                 <tr key={transaction.id}>
                   <td className="title">{transaction.title}</td>
                   <td className={transaction.type}>
