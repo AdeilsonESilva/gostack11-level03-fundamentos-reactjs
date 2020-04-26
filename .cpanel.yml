@@ -1,5 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/adeilson/git-deploy/
-    - /bin/cp -R public $DEPLOYPATH
+    - export DEPLOYPATH=/home/adeilson/git-deploy
+    - /bin/rm -rf $DEPLOYPATH/public
+    - /bin/cp -R public $DEPLOYPATH/
